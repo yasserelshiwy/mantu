@@ -6,8 +6,8 @@ export default function SideMenu({ isSideMenuOpen, setIsSideMenuOpen }) {
     <div
       className={`h-[100vh] ${
         isSideMenuOpen
-          ? "fixed left-0 z-40 top-0 bottom-0 xl:sticky w-[300px] transition-all duration-200 xl:w-[450px] xl:pl-0 xl:p-5 xl:py-8 xl:mr-6 xl:overflow-hidden"
-          : "fixed left-[-300px] top-0 bottom-0 w-[300px]   xl:w-[0px] xl:pl-0 xl:p-0 xl:py-8 xl:mr-6 overflow-hidden"
+          ? "fixed left-0 z-40 top-0 bottom-0 xl:sticky w-[300px] transition-all duration-200 xl:w-[400px] xl:pl-0 xl:p-5 xl:py-8  xl:overflow-hidden"
+          : "fixed left-[-300px] top-0 bottom-0 w-[300px]   xl:w-[0px] xl:pl-0 xl:p-0 xl:py-8 overflow-hidden"
       }`}
     >
       <div
@@ -30,7 +30,11 @@ export default function SideMenu({ isSideMenuOpen, setIsSideMenuOpen }) {
         <img
           src={img}
           alt="icon-m"
-          className="fixed bottom-18 left-0 right-0 opacity-5 "
+          className={` ${
+            isSideMenuOpen
+              ? "fixed bottom-18 left-0 right-0 opacity-5 transition-all duration-100  "
+              : " -left-50"
+          }   `}
         />
         <div className="Fashion ">
           <h2 className="text-[15px] font-bold uppercase tracking-wider text-gray-600 relative before:w-[70%] before:h-[0.1px] before:bg-gray-700 before:absolute before:right-0 before:bottom-2">

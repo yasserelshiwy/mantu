@@ -89,7 +89,7 @@ export default function Navbar({ setIsSideMenuOpen, isSideMenuOpen }) {
         <aside
           className={`second-list fixed ${
             isNavOpen === true ? "left-0" : "-left-full"
-          } transition-all duration-700 top-0 bottom-0  bg-[#181e28]  px-4 w-[300px] md:w-[350px] py-7 `}
+          } transition-all duration-700 top-0 bottom-0  bg-[#181e28]  px-4 w-[300px] md:w-[350px] py-7 z-50 `}
         >
           <div className="flex justify-between items-center text-lg font-bold pr-5 pl-2 mb-8">
             <h2 className="text-white">My Menu</h2>
@@ -148,7 +148,6 @@ export default function Navbar({ setIsSideMenuOpen, isSideMenuOpen }) {
               </NavLink>
             </li>
           </ul>
-          {/* Social */}
           <div className="mt-10 flex justify-center gap-4">
             {[
               { icon: "facebook-f", href: "/" },
@@ -175,12 +174,18 @@ export default function Navbar({ setIsSideMenuOpen, isSideMenuOpen }) {
                 <i className="fa-solid fa-magnifying-glass"></i>
               </button>
             </li>
-            <li className="relative group">
+            <li className="relative group ">
               <button className="cursor-pointer hover:text-blue-700 duration-300 transition-colors ">
                 <i className="fa-regular fa-user"></i>
               </button>
-              <div className="absolute top-20 opacity-0 -z-20 left-[-40px] group-hover:opacity-100  pt-6 group-hover:top-8 group-hover:z-0 duration-300 transition-all ">
-                <div className=" shadow flex flex-col gap-3 text-[14px] font-medium rounded-xl bg-white py-4 px-4 text-gray-600 ">
+              <div
+                className="     absolute top-full left-1/2 -translate-x-1/2 mt-3
+      w-40 rounded-xl  bg-white shadow
+      opacity-0 invisible translate-y-2
+      group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
+      transition-all duration-300 "
+              >
+                <div className=" shadow flex flex-col gap-3 text-[14px]  font-medium rounded-xl bg-white py-4 px-4 text-gray-600 ">
                   <Link
                     to={"/login"}
                     className="hover:text-blue-700 duration-300 transition-colors"

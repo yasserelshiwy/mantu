@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@utility container {
+  @apply mx-auto  xl:px-4  xl:w-[80%];
+
+  @media (width >= 96rem) {
+    max-width: 150rem;
+  }
+}
+
+.Quicksand {
+  font-family: "Quicksand Variable", sans-serif;
+}
+
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -43,4 +55,32 @@ body {
   display: none;
   width: 0;
   height: 0;
+}
+
+
+.swiper-pagination {
+  background-color: rgba(255, 255, 255, 0.815);
+  width: fit-content !important;
+  position: absolute;
+  transform: translatex(-50%) !important;
+  left: 50% !important;
+  padding: 2px;
+  border-radius: 10px;
+}
+.swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border: 2px solid #3b3e47; 
+  border-radius: 9999px ;
+  opacity: 1;
+  margin: 0 4px;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  width: 20px !important; 
+  background-color: #3b5bff; 
+  border-radius: 9999px !important;
+  transition: all 0.3s ease;
 }
